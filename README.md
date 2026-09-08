@@ -10,7 +10,7 @@
 [![Team T0033](https://img.shields.io/badge/Team-T0033-E63946?style=for-the-badge)](https://spaceacademy-hackathons.space.gov.ae/)
 [![Python 3.10 | 3.11](https://img.shields.io/badge/Python-3.10%20%7C%203.11-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
 [![STAC Cloud-Native](https://img.shields.io/badge/STAC-Planetary%20Computer-0078D4?style=for-the-badge&logo=microsoftazure&logoColor=white)](https://planetarycomputer.microsoft.com/)
-[![Open in Colab](https://img.shields.io/badge/Colab-Run%20in%20Browser-F9AB00?style=for-the-badge&logo=googlecolab&logoColor=white)](https://colab.research.google.com/github/uaespaceagency/heatwatch-813/blob/main/notebooks/01_heatwatch813_quickstart.ipynb)
+[![Open in Colab](https://img.shields.io/badge/Colab-Run%20in%20Browser-F9AB00?style=for-the-badge&logo=googlecolab&logoColor=white)](https://colab.research.google.com/github/OMUZ9924/heatwatch-813/blob/main/notebooks/01_heatwatch813_quickstart.ipynb)
 [![License: MIT](https://img.shields.io/badge/License-MIT-2ECC71?style=for-the-badge)](https://opensource.org/licenses/MIT)
 
 **Official Submission for Theme: "Urban Expansion, Land Use Change & Heat Risk"**  
@@ -218,7 +218,7 @@ An elite interdisciplinary Arab engineering and remote sensing team:
 
 ### 1. Clone & Install
 ```bash
-git clone https://github.com/uaespaceagency/heatwatch-813.git
+git clone https://github.com/OMUZ9924/heatwatch-813.git
 cd heatwatch-813
 pip install -r requirements.txt
 pip install -e .
