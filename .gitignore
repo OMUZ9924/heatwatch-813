@@ -1,0 +1,19 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Caches
+.pytest_cache/
+.ipynb_checkpoints/
+*.egg-info/
+build/
+dist/
+
+# Temporary map files
+temp_map.html
+
+# Large remote sensing data files
+*.h5
+*.hdf5
+!data/heatwatch813_hvi_sharjah_dubai.tif
