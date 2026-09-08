@@ -190,6 +190,23 @@ class HyperspectralProcessor:
         # High-fidelity synthetic fallback
         return self._generate_synthetic_slice(target_nm, shape=shape)
 
+    def load_with_hypercoast(self, filepath_or_url: str):
+        """
+        Loads hyperspectral cube using the HyperCoast library (built on Leafmap and PyVista)
+        as recommended in the official Arab Youth Space Hackathon onboarding guide.
+        """
+        try:
+            import hypercoast
+            if hasattr(hypercoast, "read_tanager"):
+                return hypercoast.read_tanager(filepath_or_url)
+            elif hasattr(hypercoast, "read_enmap"):
+                return hypercoast.read_enmap(filepath_or_url)
+            else:
+                return hypercoast.read_spectral(filepath_or_url)
+        except ImportError:
+            logger.info("HyperCoast is an optional dependency. Using native HeatWatch-813 HDF5 processor.")
+            return None
+
     def load_quality_mask(self, shape: Tuple[int, int] = (128, 128)) -> np.ndarray:
         """
         Loads pixel validity mask combining beta_cloud_mask, beta_cirrus_mask, and nodata.
