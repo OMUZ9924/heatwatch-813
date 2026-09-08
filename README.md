@@ -179,7 +179,24 @@ HeatWatch-813 translates GeoAI raster layers into spatial intervention policies 
 └───────────────────────────────┴───────────────────────────────┴────────────────────────┘
 ```
 
+
 ---
+
+## 🏆 Alignment with Official Hackathon PoC Judging Criteria
+
+As outlined in the official **UAESA & Space42 Hackathon Webinar**, Proofs of Concept are evaluated across eight rigorous dimensions. HeatWatch-813 was engineered specifically to score top marks across every category:
+
+| Evaluation Criterion | Hackathon Weight / Requirement | HeatWatch-813 Architectural Implementation |
+| :--- | :--- | :--- |
+| **1. Problem Definition** | Clarity & real-world relevance | Addresses extreme heat (>50°C), rapid sand-to-urban conversion, and public health risk in Sharjah/Dubai and Algiers. |
+| **2. Technical Soundness** | Quality, robustness & scalability | Single-channel radiative transfer LST retrieval, rigorous physics-based SAR cross-ratio, and 16 passing unit tests with automated CI. |
+| **3. Hyperspectral & 813 Bonus** | Meaningful hyperspectral use (**Extra Credit**) | Capitalizes on Satellite 813 / Tanager 426-band SWIR channels, masks atmospheric water vapor, and calculates Cool Roof Index (CRI). |
+| **4. Product & Delivery Model** | Decision support, APIs & deployment | Production-ready Streamlit dashboard, Cloud-Optimized GeoTIFF streaming, Dockerized deployment, and REST/STAC API integration. |
+| **5. Innovation** | Novelty vs. existing approaches | Breaks the classical optical sand-concrete ambiguity using C-band SAR double-bounce geometry, eliminating false urban heat detections. |
+| **6. Impact & Strategic Fit** | Societal, climate & SDG alignment | Directly addresses **SDG 9** (Industry, Innovation & Infrastructure), **SDG 11** (Sustainable Cities), and **SDG 13** (Climate Action). |
+| **7. Business & Policy Viability** | Economic potential & municipal ROI | Translates thermal risk into actionable policy ROI (quantified HVAC energy savings in MWh and cooling relief in °C). |
+| **8. Space42 gIQ Compatibility** | Integration with UAE Geospatial Platform | Built with cloud-native open standards (COG, STAC, GeoJSON, GeoPandas) for 1-click deployment into Space42's **gIQ platform**. |
+
 
 ## 👥 Team T0033 Credits
 
