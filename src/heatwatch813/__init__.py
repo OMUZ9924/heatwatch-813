@@ -23,6 +23,9 @@ from .hyperspectral import (
     mask_water_vapor_absorption,
     compute_surface_albedo,
     compute_cool_roof_index,
+    compute_ndbi,
+    compute_mndwi,
+    compute_bui,
     nearest_band_idx,
 )
 from .thermal_engine import (
@@ -66,6 +69,9 @@ __all__ = [
     "mask_water_vapor_absorption",
     "compute_surface_albedo",
     "compute_cool_roof_index",
+    "compute_ndbi",
+    "compute_mndwi",
+    "compute_bui",
     "nearest_band_idx",
     "ThermalEngine",
     "compute_lst_from_tirs",

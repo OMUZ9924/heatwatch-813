@@ -135,6 +135,23 @@ def compute_cool_roof_index(
     return np.clip(cri, -1.0, 1.0)
 
 
+def compute_ndbi(swir: np.ndarray, nir: np.ndarray) -> np.ndarray:
+    """Normalized Difference Built-Up Index: (SWIR - NIR) / (SWIR + NIR)"""
+    denom = swir + nir
+    return np.where(denom != 0, (swir - nir) / (denom + 1e-7), 0.0).astype(np.float32)
+
+
+def compute_mndwi(green: np.ndarray, swir: np.ndarray) -> np.ndarray:
+    """Modified Normalized Difference Water Index: (Green - SWIR) / (Green + SWIR)"""
+    denom = green + swir
+    return np.where(denom != 0, (green - swir) / (denom + 1e-7), 0.0).astype(np.float32)
+
+
+def compute_bui(ndbi: np.ndarray, ndvi: np.ndarray) -> np.ndarray:
+    """Built-Up Index: NDBI - NDVI (isolates true impervious urban cover from vegetated zones)"""
+    return (ndbi - ndvi).astype(np.float32)
+
+
 class HyperspectralProcessor:
     """Production processor for 813 / Planet Tanager 426-band HDF5 surface reflectance cubes."""
 

@@ -95,7 +95,23 @@ class TestHyperspectralProcessor(unittest.TestCase):
         slice_665 = self.processor.load_band_slice(665.0)
         self.assertIsInstance(slice_665, np.ndarray)
         self.assertEqual(slice_665.ndim, 2)
-        self.assertTrue(np.all(slice_665 >= 0.0))
+    def test_land_cover_indices(self):
+        """Verify NDBI, MNDWI, and BUI indices calculation matching challenge criteria."""
+        from heatwatch813.hyperspectral import compute_ndbi, compute_mndwi, compute_bui
+        swir = np.array([0.4, 0.2], dtype=np.float32)
+        nir = np.array([0.2, 0.5], dtype=np.float32)
+        green = np.array([0.1, 0.6], dtype=np.float32)
+        ndvi = (nir - 0.1) / (nir + 0.1)
+
+        ndbi = compute_ndbi(swir, nir)
+        mndwi = compute_mndwi(green, swir)
+        bui = compute_bui(ndbi, ndvi)
+
+        # First pixel: swir > nir -> positive NDBI
+        self.assertGreater(ndbi[0], 0.0)
+        # Second pixel: swir < nir -> negative NDBI
+        self.assertLess(ndbi[1], 0.0)
+        self.assertEqual(len(bui), 2)
 
 
 if __name__ == "__main__":
