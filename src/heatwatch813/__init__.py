@@ -20,6 +20,9 @@ from .stac_loader import (
 )
 from .hyperspectral import (
     HyperspectralProcessor,
+    generate_tanager_wavelengths,
+    generate_satellite813_wavelengths,
+    generate_enmap_wavelengths,
     mask_water_vapor_absorption,
     compute_surface_albedo,
     compute_cool_roof_index,
@@ -66,6 +69,9 @@ __all__ = [
     "search_landsat",
     "query_planet_tanager",
     "HyperspectralProcessor",
+    "generate_tanager_wavelengths",
+    "generate_satellite813_wavelengths",
+    "generate_enmap_wavelengths",
     "mask_water_vapor_absorption",
     "compute_surface_albedo",
     "compute_cool_roof_index",

@@ -28,10 +28,33 @@ class TestHyperspectralProcessor(unittest.TestCase):
         self.processor = HyperspectralProcessor()
 
     def test_band_count_and_wavelength_range(self):
-        """Verify standard 426 bands and realistic VNIR-SWIR range (380-2510 nm)."""
+        """Verify standard 426 bands and realistic VNIR-SWIR range (376-2505 nm) for Tanager."""
         self.assertEqual(len(self.wavelengths), 426)
-        self.assertAlmostEqual(float(self.wavelengths[0]), 380.0, places=1)
-        self.assertAlmostEqual(float(self.wavelengths[-1]), 2510.0, places=1)
+        self.assertAlmostEqual(float(self.wavelengths[0]), 376.0, places=1)
+        self.assertAlmostEqual(float(self.wavelengths[-1]), 2505.0, places=1)
+
+    def test_satellite_813_sensor_profile(self):
+        """Verify official Arab Hyperspectral Satellite 813 specs: 205 bands, 400-1700 nm, 20m GSD."""
+        from heatwatch813.hyperspectral import generate_satellite813_wavelengths
+        wvl_813 = generate_satellite813_wavelengths(205)
+        self.assertEqual(len(wvl_813), 205)
+        self.assertAlmostEqual(float(wvl_813[0]), 400.0, places=1)
+        self.assertAlmostEqual(float(wvl_813[-1]), 1700.0, places=1)
+
+        proc_813 = HyperspectralProcessor(sensor="satellite813")
+        self.assertEqual(proc_813.spatial_resolution_m, 20.0)
+        self.assertEqual(len(proc_813.wavelengths_nm), 205)
+
+    def test_enmap_sensor_profile(self):
+        """Verify EnMAP hyperspectral profile: 240 bands, 420-2450 nm, 30m GSD."""
+        from heatwatch813.hyperspectral import generate_enmap_wavelengths
+        wvl_enmap = generate_enmap_wavelengths(240)
+        self.assertEqual(len(wvl_enmap), 240)
+        self.assertAlmostEqual(float(wvl_enmap[0]), 420.0, places=1)
+        self.assertAlmostEqual(float(wvl_enmap[-1]), 2450.0, places=1)
+
+        proc_enmap = HyperspectralProcessor(sensor="enmap")
+        self.assertEqual(proc_enmap.spatial_resolution_m, 30.0)
 
     def test_nearest_band_idx(self):
         """Verify nearest band index lookup for key diagnostic wavelengths."""

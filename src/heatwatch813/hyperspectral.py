@@ -27,10 +27,26 @@ MAX_RELIABLE_SWIR_NM = 2450.0  # Atmospheric transmission drops sharply; high se
 
 def generate_tanager_wavelengths(num_bands: int = 426) -> np.ndarray:
     """
-    Generates standard Tanager / Satellite 813 contiguous center wavelengths in nanometers.
-    Spans from ~380 nm (Visible-UV edge) to 2510 nm (SWIR) with ~5.0 nm spectral sampling.
+    Generates standard Planet Tanager contiguous center wavelengths in nanometers.
+    Spans 376–2505 nm (~426 narrow bands) with 30 m spatial resolution.
     """
-    return np.linspace(380.0, 2510.0, num_bands, dtype=np.float32)
+    return np.linspace(376.0, 2505.0, num_bands, dtype=np.float32)
+
+
+def generate_satellite813_wavelengths(num_bands: int = 205) -> np.ndarray:
+    """
+    Generates official Arab Hyperspectral Satellite 813 center wavelengths in nanometers.
+    Spans 400–1700 nm (~205 bands, ~5 nm spectral sampling) with 20 m spatial resolution.
+    """
+    return np.linspace(400.0, 1700.0, num_bands, dtype=np.float32)
+
+
+def generate_enmap_wavelengths(num_bands: int = 240) -> np.ndarray:
+    """
+    Generates EnMAP center wavelengths in nanometers.
+    Spans 420–2450 nm (~240 bands) with 30 m spatial resolution.
+    """
+    return np.linspace(420.0, 2450.0, num_bands, dtype=np.float32)
 
 
 def nearest_band_idx(wavelengths_nm: np.ndarray, target_nm: float) -> int:
@@ -155,9 +171,18 @@ def compute_bui(ndbi: np.ndarray, ndvi: np.ndarray) -> np.ndarray:
 class HyperspectralProcessor:
     """Production processor for 813 / Planet Tanager 426-band HDF5 surface reflectance cubes."""
 
-    def __init__(self, hdf5_path: Optional[str] = None):
+    def __init__(self, hdf5_path: Optional[str] = None, sensor: str = "tanager"):
         self.hdf5_path = hdf5_path
-        self.wavelengths_nm = generate_tanager_wavelengths(426)
+        self.sensor = sensor.lower()
+        if self.sensor in ["satellite813", "813", "satellite_813", "satellite-813"]:
+            self.wavelengths_nm = generate_satellite813_wavelengths(205)
+            self.spatial_resolution_m = 20.0
+        elif self.sensor in ["enmap"]:
+            self.wavelengths_nm = generate_enmap_wavelengths(240)
+            self.spatial_resolution_m = 30.0
+        else:  # Default to Tanager
+            self.wavelengths_nm = generate_tanager_wavelengths(426)
+            self.spatial_resolution_m = 30.0
         self.clean_bands_mask = mask_water_vapor_absorption(self.wavelengths_nm)
 
     def load_band_slice(self, target_nm: float, shape: Tuple[int, int] = (64, 64)) -> np.ndarray:
