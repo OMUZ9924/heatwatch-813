@@ -189,13 +189,13 @@ As outlined in the official **UAESA & Space42 Hackathon Webinar**, Proofs of Con
 | Evaluation Criterion | Hackathon Weight / Requirement | HeatWatch-813 Architectural Implementation |
 | :--- | :--- | :--- |
 | **1. Problem Definition** | Clarity & real-world relevance | Addresses extreme heat (>50°C), rapid sand-to-urban conversion, and public health risk in Sharjah/Dubai and Algiers. |
-| **2. Technical Soundness** | Quality, robustness & scalability | Single-channel radiative transfer LST retrieval, rigorous physics-based SAR cross-ratio, and 16 passing unit tests with automated CI. |
-| **3. Hyperspectral & 813 Bonus** | Meaningful hyperspectral use (**Extra Credit**) | Capitalizes on Satellite 813 / Tanager 426-band SWIR channels, masks atmospheric water vapor, and calculates Cool Roof Index (CRI). |
-| **4. Product & Delivery Model** | Decision support, APIs & deployment | Production-ready Streamlit dashboard, Cloud-Optimized GeoTIFF streaming, Dockerized deployment, and REST/STAC API integration. |
+| **2. Technical Soundness** | Quality, robustness & scalability | Single-channel radiative transfer LST retrieval, rigorous physics-based SAR cross-ratio, and 19 passing unit tests with automated CI. |
+| **3. Hyperspectral & 813 Bonus** | Meaningful hyperspectral use (**Extra Credit**) | Capitalizes on Satellite 813 (205 bands) / Tanager (426 bands) SWIR channels, masks atmospheric water vapor, and calculates Cool Roof Index (CRI). |
+| **4. Product & Delivery Model** | Decision support, APIs & deployment | Production-ready Streamlit dashboard, Cloud-Optimized GeoTIFF streaming, Dockerized deployment, Space42 gIQ STAC manifest, and REST/STAC API integration. |
 | **5. Innovation** | Novelty vs. existing approaches | Breaks the classical optical sand-concrete ambiguity using C-band SAR double-bounce geometry, eliminating false urban heat detections. |
 | **6. Impact & Strategic Fit** | Societal, climate & SDG alignment | Directly addresses **SDG 9** (Industry, Innovation & Infrastructure), **SDG 11** (Sustainable Cities), and **SDG 13** (Climate Action). |
 | **7. Business & Policy Viability** | Economic potential & municipal ROI | Translates thermal risk into actionable policy ROI (quantified HVAC energy savings in MWh and cooling relief in °C). |
-| **8. Space42 gIQ Compatibility** | Integration with UAE Geospatial Platform | Built with cloud-native open standards (COG, STAC, GeoJSON, GeoPandas) for 1-click deployment into Space42's **gIQ platform**. |
+| **8. Space42 gIQ Compatibility** | Integration with UAE Geospatial Platform | Built with cloud-native open standards (COG, STAC 1.0.0, GeoJSON) for 1-click deployment into Space42's **gIQ platform**. |
 
 
 ## 👥 Team T0033 Credits
@@ -212,17 +212,12 @@ An elite interdisciplinary Arab engineering and remote sensing team:
 
 ## 🚀 Quickstart Guide
 
-### Prerequisites
-- Python 3.10 or 3.11
-- Git
-
-### 1. Clone & Install
+### 1. Interactive Proof of Concept (PoC) Jupyter Notebook
+Run the end-to-end masterclass notebook showcasing real Tanager HDF5 processing, Planetary Computer STAC streaming, mono-window LST retrieval, quantitative confusion matrices, and Space42 gIQ manifest generation:
 ```bash
-git clone https://github.com/OMUZ9924/heatwatch-813.git
-cd heatwatch-813
-pip install -r requirements.txt
-pip install -e .
+jupyter notebook notebooks/03_heatwatch813_poc_urban_heat.ipynb
 ```
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/OMUZ9924/heatwatch-813/blob/main/notebooks/03_heatwatch813_poc_urban_heat.ipynb)
 
 ### 2. Run the Interactive Streamlit Web Application
 ```bash
@@ -238,7 +233,7 @@ Open your browser at `http://localhost:8501` to explore:
 ```bash
 pytest tests/ -v
 ```
-All 16 unit tests covering physical thermal retrieval, water vapor filtering, SAR backscatter extraction, and HVI tier classifications execute in seconds.
+All **19 unit tests** covering physical thermal retrieval, water vapor filtering, SAR backscatter extraction, sensor profiles (Satellite 813, Tanager, EnMAP), and HVI tier classifications execute cleanly in ~1 second.
 
 ### 4. Docker Deployment
 ```bash
