@@ -10,6 +10,8 @@ import json
 import numpy as np
 import pandas as pd
 import streamlit as st
+import matplotlib
+matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
 # Ensure local src directory is on sys.path
