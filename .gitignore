@@ -13,6 +13,7 @@ dist/
 # Temporary map files
 temp_map.html
 *.pdf
+*.PNG
 
 # Large remote sensing data files
 *.h5
