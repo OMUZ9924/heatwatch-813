@@ -8,7 +8,7 @@
 
 [![Hackathon](https://img.shields.io/badge/Arab%20Youth%20Space%20Hackathon-813%20Challenge-0A2342?style=for-the-badge&logo=satellite&logoColor=white)](https://spaceacademy-hackathons.space.gov.ae/)
 [![Team T0033](https://img.shields.io/badge/Team-T0033-E63946?style=for-the-badge)](https://spaceacademy-hackathons.space.gov.ae/)
-[![Python 3.10 | 3.11](https://img.shields.io/badge/Python-3.10%20%7C%203.11-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
+[![Live Web App](https://img.shields.io/badge/Live%20App-GitHub%20Pages-38BDF8?style=for-the-badge&logo=githubpages&logoColor=white)](https://omuz9924.github.io/heatwatch-813/)
 [![STAC Cloud-Native](https://img.shields.io/badge/STAC-Planetary%20Computer-0078D4?style=for-the-badge&logo=microsoftazure&logoColor=white)](https://planetarycomputer.microsoft.com/)
 [![Open in Colab](https://img.shields.io/badge/Colab-Run%20in%20Browser-F9AB00?style=for-the-badge&logo=googlecolab&logoColor=white)](https://colab.research.google.com/github/OMUZ9924/heatwatch-813/blob/main/notebooks/01_heatwatch813_quickstart.ipynb)
 [![License: MIT](https://img.shields.io/badge/License-MIT-2ECC71?style=for-the-badge)](https://opensource.org/licenses/MIT)
@@ -16,7 +16,7 @@
 **Official Submission for Theme: "Urban Expansion, Land Use Change & Heat Risk"**  
 *Organized by the UAE Space Agency (UAESA) and Space42*
 
-[🌐 Live Streamlit Dashboard](http://localhost:8501) · [📓 Quickstart Colab](notebooks/01_heatwatch813_quickstart.ipynb) · [🔬 Deep-Dive Pipeline](notebooks/02_urban_heat_risk_pipeline.ipynb) · [🏛️ Policy Matrix](#-urban-resilience-policy-recommendations)
+[🚀 Live Interactive Web App](https://omuz9924.github.io/heatwatch-813/) · [📓 Quickstart Colab](https://colab.research.google.com/github/OMUZ9924/heatwatch-813/blob/main/notebooks/01_heatwatch813_quickstart.ipynb) · [🔬 Deep-Dive Pipeline](notebooks/02_urban_heat_risk_pipeline.ipynb) · [🏛️ Policy Matrix](#-urban-resilience-policy-recommendations)
 
 </div>
 
