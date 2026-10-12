@@ -18,7 +18,7 @@
         "climate_zone": "BWh (Hyper-Arid Subtropical Desert)",
         "population_estimate": 4600000,
         "target_challenges": [
-          "Extreme summer surface temperature (>50°C)",
+          "Extreme summer surface temperature (>50\u00c2\u00b0C)",
           "Rapid sand-to-impervious urban expansion",
           "Optical spectral confusion between quartz sand and concrete",
           "Intense Urban Heat Island (UHI) inland entrapment"
@@ -29,19 +29,42 @@
           "Landsat-8/9 TIRS (Band 10 Radiative LST)",
           "Sentinel-2 MSI (NDVI vegetation cooling corridors)"
         ],
-        "bbox": [55.20, 25.15, 55.55, 25.40],
-        "center": [55.375, 25.275],
+        "bbox": [
+          55.2,
+          25.15,
+          55.55,
+          25.4
+        ],
+        "center": [
+          55.375,
+          25.275
+        ],
         "recommended_zoom": 11
       },
       "geometry": {
         "type": "Polygon",
         "coordinates": [
           [
-            [55.20, 25.15],
-            [55.55, 25.15],
-            [55.55, 25.40],
-            [55.20, 25.40],
-            [55.20, 25.15]
+            [
+              55.2,
+              25.15
+            ],
+            [
+              55.55,
+              25.15
+            ],
+            [
+              55.55,
+              25.4
+            ],
+            [
+              55.2,
+              25.4
+            ],
+            [
+              55.2,
+              25.15
+            ]
           ]
         ]
       }
@@ -67,19 +90,103 @@
           "Landsat-8/9 TIRS (Radiative LST & UHI intensity)",
           "Sentinel-2 MSI (Canopy cover & green space deficit)"
         ],
-        "bbox": [2.95, 36.65, 3.25, 36.85],
-        "center": [3.10, 36.75],
+        "bbox": [
+          2.95,
+          36.65,
+          3.25,
+          36.85
+        ],
+        "center": [
+          3.1,
+          36.75
+        ],
         "recommended_zoom": 11
       },
       "geometry": {
         "type": "Polygon",
         "coordinates": [
           [
-            [2.95, 36.65],
-            [3.25, 36.65],
-            [3.25, 36.85],
-            [2.95, 36.85],
-            [2.95, 36.65]
+            [
+              2.95,
+              36.65
+            ],
+            [
+              3.25,
+              36.65
+            ],
+            [
+              3.25,
+              36.85
+            ],
+            [
+              2.95,
+              36.85
+            ],
+            [
+              2.95,
+              36.65
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "AOI_SAU_RIYADH",
+      "properties": {
+        "city": "Riyadh",
+        "country": "Saudi Arabia",
+        "region": "Najd Plateau / Arabian Desert",
+        "climate_zone": "BWh (Hyper-Arid Subtropical Desert)",
+        "population_estimate": 7500000,
+        "target_challenges": [
+          "Official Theme 2 Featured Benchmark Scene",
+          "Severe desert quartz sand vs urban concrete spectral ambiguity",
+          "Extreme summer ambient heat (>48\u00b0C) and nocturnal UHI retention",
+          "Rapid urban expansion across asphalt and low-albedo developments"
+        ],
+        "satellite_sensors": [
+          "Tanager / Satellite 813 Hyperspectral (CRI & Water Vapor Masking)",
+          "Sentinel-1 C-SAR (Double-bounce structural detection)",
+          "Landsat-8/9 TIRS (Band 10 Radiative Transfer LST)",
+          "Sentinel-2 MSI (NDVI / BUI index benchmarking)"
+        ],
+        "bbox": [
+          46.6,
+          24.6,
+          46.85,
+          24.85
+        ],
+        "center": [
+          46.725,
+          24.725
+        ],
+        "recommended_zoom": 11
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              46.6,
+              24.6
+            ],
+            [
+              46.85,
+              24.6
+            ],
+            [
+              46.85,
+              24.85
+            ],
+            [
+              46.6,
+              24.85
+            ],
+            [
+              46.6,
+              24.6
+            ]
           ]
         ]
       }

@@ -284,3 +284,10 @@ heatwatch-813/
 
 Distributed under the **MIT License**. See `LICENSE` for details.  
 Built for the **Arab Youth Space Hackathon: 813 Challenge**, organized by the **UAE Space Agency (UAESA)** and **Space42**.
+
+### 🛰️ Satellite Data & STAC Attribution
+* **Planet Tanager Data:** Tanager STAC Data, available at [www.planet.com/data/stac](https://www.planet.com/data/stac) © 2025–2026 Planet Labs PBC. All Rights Reserved. (Creative Commons CC-BY 4.0).
+* **Arab Satellite 813:** Courtesy of the UAE Space Agency (UAESA) & Space42.
+* **EnMAP Mission:** German Aerospace Center (DLR) / EnMAP Science Team.
+* **Copernicus Sentinel Data:** European Space Agency (ESA) Sentinel-1 C-SAR & Sentinel-2 MSI open access data.
+* **Landsat-8/9:** USGS / NASA Landsat Level-2 Surface Temperature Science Products.
