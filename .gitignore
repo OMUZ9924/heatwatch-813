@@ -12,10 +12,11 @@ dist/
 
 # Temporary map files
 temp_map.html
-*.pdf
-*.PNG
 
-# Large remote sensing data files
+# Large remote sensing data files (exclude full raw scenes)
 *.h5
 *.hdf5
 !data/heatwatch813_hvi_sharjah_dubai.tif
+!data/sample_input/*
+!results/*
+!docs/*.pdf
